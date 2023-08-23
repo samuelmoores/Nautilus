@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if (rotation != Vector2.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(rotation, Vector3.up);
+            Quaternion toRotation = Quaternion.LookRotation(-rotation, Vector3.up) * Quaternion.Euler(0, 180, 0);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
 
         }
