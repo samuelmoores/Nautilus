@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     Vector2 rotation;
     public float swimSpeed;
     public float rotateSpeed;
+    public float targetZPosition; 
     // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,5 +40,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (transform.position.z != targetZPosition) // Clamped because collision were altering z axis positon.
+        {   // clamp if position.z is not equal to targetZ. 
+            Vector3 currentPosition = transform.position;
+            Vector3 newPosition = currentPosition + new Vector3(movement.x, 0f, movement.y) * swimSpeed * Time.deltaTime;
+            newPosition.z = Mathf.Clamp(newPosition.z, targetZPosition, targetZPosition);
+            rb.MovePosition(newPosition);
+        }
     }
 }
