@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = true;
     }
 
     // Update is called once per frame

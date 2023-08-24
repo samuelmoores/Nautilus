@@ -28,13 +28,22 @@ public class Submarine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            transform.position = Vector3.zero; 
+            Player.GetComponent<CapsuleCollider>().enabled = false;
+            Player.GetComponent<BoxCollider>().enabled = true;
+
+
+            transform.position = Vector3.zero;
             transform.rotation = Quaternion.Euler(0, 90, 0);
             transform.SetParent(Player.transform, false);
             transform.Translate(0, 1.2f, 0);
 
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
