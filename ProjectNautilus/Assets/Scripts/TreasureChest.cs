@@ -22,7 +22,6 @@ public class TreasureChest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(collectionTimer);
         if(opened)
         {
             collectionTimer -= Time.deltaTime;
