@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    PlayerController playerController;
     NavMeshAgent agent;
     public GameObject[] patrolRoute;
     int patrolRouteIndex = 0;
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = patrolRoute[patrolRouteIndex].transform.position;
+        playerController = GameObject.Find("PF_ScubaSteve").GetComponent<PlayerController>();
 
     }
 
@@ -37,7 +39,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !playerController.isDead)
         {
             agent.isStopped = true;
         }
