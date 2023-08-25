@@ -10,18 +10,24 @@ public class PlayerController : MonoBehaviour
     Vector2 rotation;
     public float swimSpeed;
     public float rotateSpeed;
+    [HideInInspector] public float health;
+    [HideInInspector] public bool isInteracting;
+    bool takingDamage = false;
+    bool isDead = false;
+    [HideInInspector] public bool isDrivingSubmarine = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        GetComponent<BoxCollider>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = true;
+        health = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         rotation.x = Input.GetAxis("Horizontal");
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -44,6 +50,25 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isSwimming", false);
         }
         
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            isInteracting = true;
+        }
+
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            isInteracting = false;
+        }
+
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && !isDrivingSubmarine)
+        {
+            health -= 0.2f;
+        }
+    }
+
 }

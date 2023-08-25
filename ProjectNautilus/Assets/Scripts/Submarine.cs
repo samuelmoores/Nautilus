@@ -10,6 +10,7 @@ public class Submarine : MonoBehaviour
     GameObject TorpedoRef;
     public float TorpedoSpeed;
     public Transform TorpedoLoc;
+    bool canIntereact;
   
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,19 @@ public class Submarine : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             TorpedoRef = Instantiate(Torpedo, TorpedoLoc.position, TorpedoLoc.rotation);
-            TorpedoRef.GetComponent<Rigidbody>().AddForce(-transform.right * TorpedoSpeed, ForceMode.Impulse);
+            TorpedoRef.GetComponent<Rigidbody>().AddForce(transform.forward * TorpedoSpeed, ForceMode.Impulse);
+        }
+
+        if(canIntereact && Player.GetComponent<PlayerController>().isInteracting)
+        {
+            Player.GetComponent<CapsuleCollider>().enabled = false;
+            Player.GetComponent<PlayerController>().isDrivingSubmarine = true;
+
+            transform.position = Player.transform.position;
+            transform.rotation = Quaternion.Euler(0, Player.transform.eulerAngles.y, 0);
+            transform.SetParent(Player.transform, false);
+            transform.Translate(0, 1.2f, 0);
+
         }
     }
 
@@ -30,20 +43,16 @@ public class Submarine : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Player.GetComponent<CapsuleCollider>().enabled = false;
-            Player.GetComponent<BoxCollider>().enabled = true;
-
-
-            transform.position = Vector3.zero;
-            transform.rotation = Quaternion.Euler(0, 90, 0);
-            transform.SetParent(Player.transform, false);
-            transform.Translate(0, 1.2f, 0);
-
+            canIntereact = true;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        
+        if(other.CompareTag("Player"))
+        {
+            canIntereact = false;
+        }
     }
+
 }
