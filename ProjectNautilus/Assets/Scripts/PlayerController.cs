@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     Animator animator;
+    GameManager gameManager;
     Vector2 movement;
     Vector2 rotation;
     public float swimSpeed;
@@ -15,20 +16,24 @@ public class PlayerController : MonoBehaviour
     bool takingDamage = false;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isDrivingSubmarine = false;
+    float respawnTimer = 5f;
+    float currentRespawnTimer;
+    Transform CurrentCheckpoint;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         GetComponent<CapsuleCollider>().enabled = true;
         health = 1.0f;
         Physics.gravity = new Vector3(0, -2, 0);
+        currentRespawnTimer = respawnTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         rotation.x = Input.GetAxis("Horizontal");
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -37,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if(takingDamage)
         {
             animator.SetBool("takingDamage", true);
-            health -= Time.deltaTime;
+            health -= Time.deltaTime / 3f;
 
             if (health < 0.01)
             {
@@ -52,6 +57,17 @@ public class PlayerController : MonoBehaviour
 
         if (!isDead)
             Move();
+        else
+        {
+            if (currentRespawnTimer > 0.01f)
+            {
+                currentRespawnTimer -= Time.deltaTime;
+            }
+            else
+            {
+                Respawn();
+            }
+        }
         
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -92,6 +108,25 @@ public class PlayerController : MonoBehaviour
         health = 0;
         animator.SetBool("isDead", true);
         rb.freezeRotation = false;
+
+    }
+
+    void Respawn()
+    {
+        takingDamage = false;
+        isDead = false;
+        animator.SetBool("isDead", false);
+        health = 1.0f;
+        currentRespawnTimer = respawnTimer;
+        transform.position = CurrentCheckpoint.transform.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Checkpoint"))
+        {
+            CurrentCheckpoint = other.transform;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
