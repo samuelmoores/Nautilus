@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 87c95b4d704eec248929176f48a936de, type: 3}
       propertyPath: m_Name
-      value: Submarine Variant
+      value: PF_Submarine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96,6 +96,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87c95b4d704eec248929176f48a936de, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3402642832143115979}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87c95b4d704eec248929176f48a936de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6298181269885866620}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87c95b4d704eec248929176f48a936de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 669502053416806971}
   m_SourcePrefab: {fileID: 100100000, guid: 87c95b4d704eec248929176f48a936de, type: 3}
 --- !u!1 &6041785212609639436 stripped
 GameObject:
@@ -138,6 +144,50 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.393016, y: 2.4654014, z: 2.3577034}
   m_Center: {x: -0.5582792, y: -0.54933035, z: -1.6493473e-11}
+--- !u!136 &6298181269885866620
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041785212609639436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1045804
+  m_Height: 4.7941475
+  m_Direction: 2
+  m_Center: {x: -0.08321309, y: -0.79810023, z: 0.0007405281}
+--- !u!135 &669502053416806971
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041785212609639436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.7847589
+  m_Center: {x: 0, y: 0.9674835, z: 0.4382229}
 --- !u!4 &6382562810231942838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 87c95b4d704eec248929176f48a936de, type: 3}
