@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7befc95b85032c24686728110f8b3bfa, type: 3}
       propertyPath: m_Name
-      value: Shark Variant
+      value: PF_Shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7befc95b85032c24686728110f8b3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
