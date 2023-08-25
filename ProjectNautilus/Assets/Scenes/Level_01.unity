@@ -4375,11 +4375,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2432539725404632233, guid: 1b2dd69c30a1bc349b7b6d3aaf0d2f1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: 16.14
       objectReference: {fileID: 0}
     - target: {fileID: 2432539725404632233, guid: 1b2dd69c30a1bc349b7b6d3aaf0d2f1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.5
+      value: -4.06
       objectReference: {fileID: 0}
     - target: {fileID: 2432539725404632233, guid: 1b2dd69c30a1bc349b7b6d3aaf0d2f1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17028,7 +17028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5470047143278584445, guid: 13c57e64fd9dc994eb8931a7198334c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5025692
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470047143278584445, guid: 13c57e64fd9dc994eb8931a7198334c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17058,6 +17058,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9219066917056562916, guid: 13c57e64fd9dc994eb8931a7198334c4, type: 3}
+      propertyPath: patrolRoute.Array.data[0]
+      value: 
+      objectReference: {fileID: 22136770}
+    - target: {fileID: 9219066917056562916, guid: 13c57e64fd9dc994eb8931a7198334c4, type: 3}
+      propertyPath: patrolRoute.Array.data[1]
+      value: 
+      objectReference: {fileID: 955519451}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
