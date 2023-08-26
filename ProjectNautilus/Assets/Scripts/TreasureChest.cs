@@ -10,7 +10,7 @@ public class TreasureChest : MonoBehaviour
     List<GameObject> CoinInstances;
     GameObject CoinInstance;
     bool opened = false;
-    float collectionTimer = 5f;
+    float collectionTimer = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +30,9 @@ public class TreasureChest : MonoBehaviour
             {
                 if (CoinInstances[i] != null)
                 {
-                    if (CoinInstances[i].transform.position.z < -1.30f || CoinInstances[i].transform.position.z > -1.20f)
-                    {
-                        CoinInstances[i].transform.position = new Vector3(CoinInstances[i].transform.position.x, CoinInstances[i].transform.position.y, -1.25f); 
-                    }
+                    
+                     CoinInstances[i].transform.position = new Vector3(CoinInstances[i].transform.position.x, CoinInstances[i].transform.position.y, 0); 
+                    
                 }
             }
             
