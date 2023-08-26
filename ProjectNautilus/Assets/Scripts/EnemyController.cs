@@ -38,7 +38,6 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        Debug.Log(transform.forward);
 
     }
 

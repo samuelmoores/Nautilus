@@ -127,6 +127,20 @@ public class PlayerController : MonoBehaviour
         {
             CurrentCheckpoint = other.transform;
         }
+
+        if(other.CompareTag("Enemy"))
+        {
+            takingDamage = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            takingDamage = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
