@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     GameManager gameManager;
+    GameObject coinsUI;
 
     [HideInInspector] public bool canCollect = false;
 
@@ -12,6 +13,7 @@ public class Collectible : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        coinsUI = GameObject.Find("CoinsHUD");
     }
 
     private void Update()
@@ -23,6 +25,7 @@ public class Collectible : MonoBehaviour
         if(other.CompareTag("Player") && canCollect)
         {
             Destroy(gameObject);
+            coinsUI.GetComponent<CoinsUI>().numOfCoins++;
         }
     }
 
