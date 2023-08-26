@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     GameManager gameManager;
     Vector2 movement;
-    Vector2 rotation;
+    Vector3 rotation;
     public float swimSpeed;
     public float rotateSpeed;
     [HideInInspector] public float health;
@@ -94,11 +94,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isSwimming", false);
         }
 
-        if (rotation != Vector2.zero)
+        if (rotation != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(-rotation, Vector3.up) * Quaternion.Euler(0, 180, 0);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
-
+                Quaternion toRotation = Quaternion.LookRotation(-rotation, Vector3.up) * Quaternion.Euler(0, 180, 0);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
         }
     }
 
