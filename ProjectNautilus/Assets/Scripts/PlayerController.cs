@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed;
     [HideInInspector] public float health;
     [HideInInspector] public bool isInteracting;
-    bool takingDamage = false;
+    [HideInInspector] public bool takingDamage = false;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isDrivingSubmarine = false;
     float respawnTimer = 5f;
@@ -77,6 +77,13 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.E))
         {
             isInteracting = false;
+        }
+
+        if (health < 0.01)
+        {
+            animator.SetBool("takingDamage", true);
+            Death();
+
         }
 
     }

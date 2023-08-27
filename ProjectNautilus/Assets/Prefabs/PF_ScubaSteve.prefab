@@ -109,6 +109,7 @@ MonoBehaviour:
   rotateSpeed: 300
   health: 0
   isInteracting: 0
+  takingDamage: 0
   isDead: 0
   isDrivingSubmarine: 0
 --- !u!54 &5314837028207726845

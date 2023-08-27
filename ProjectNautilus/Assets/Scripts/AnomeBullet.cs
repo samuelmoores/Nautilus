@@ -6,6 +6,14 @@ using UnityEngine;
 public class AnomeBullet : MonoBehaviour
 {
     float shotDuration = 3f;
+    PlayerController Player;
+    public float damage;
+
+    void Start()
+    {
+        Player = GameObject.Find("PF_ScubaSteve").GetComponent<PlayerController>();
+
+    }
 
     void Update()
     {
@@ -17,13 +25,11 @@ public class AnomeBullet : MonoBehaviour
      
     
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.tag == "Player")
-        { 
-            PlayerController controller = GetComponent<PlayerController>();
-            
-            Destroy(this.gameObject);    
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Player.health -= damage;
         }
     }
 
