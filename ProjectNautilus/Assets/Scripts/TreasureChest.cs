@@ -63,7 +63,7 @@ public class TreasureChest : MonoBehaviour
 
                 CoinInstances.Add(CoinInstance);
 
-                CoinInstance.GetComponent<Rigidbody>().AddForce(new Vector3(i, 25, 0), ForceMode.Impulse);
+                CoinInstance.GetComponent<Rigidbody>().AddForce(new Vector3(i, 15, 0), ForceMode.Impulse);
 
             }
 
