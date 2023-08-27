@@ -125,7 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotOffset: 0
   Bullet: {fileID: 4900519172410168771, guid: 6f015abf1e3f4d247b3a80b09a0b68e1, type: 3}
-  BulletLocation: {fileID: 6636025400197478400}
+  BulletLocation1: {fileID: 6636025400197478400}
+  BulletLocation2: {fileID: 6636025400197478400}
+  BulletLocation3: {fileID: 6636025400197478400}
 --- !u!136 &7144508558490766136
 CapsuleCollider:
   m_ObjectHideFlags: 0

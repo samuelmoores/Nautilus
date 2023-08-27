@@ -14,7 +14,9 @@ public class SeaAnome : MonoBehaviour
     public GameObject Bullet;
     GameObject BulletRef;
 
-    public Transform BulletLocation;
+    public Transform BulletLocation1;
+    public Transform BulletLocation2;
+    public Transform BulletLocation3;
 
     private void Start()
     {
@@ -28,22 +30,22 @@ public class SeaAnome : MonoBehaviour
 
         if (shotTimer < 3 && shotTimer > 2.5f && !shot01WasShot_lol)
         {
-            BulletRef = Instantiate(Bullet, BulletLocation.position, BulletLocation.rotation);
-            BulletRef.GetComponent<Rigidbody>().AddForce(transform.up * 15, ForceMode.Impulse);
+            BulletRef = Instantiate(Bullet, BulletLocation1.position, BulletLocation1.rotation);
+            BulletRef.GetComponent<Rigidbody>().AddForce(BulletLocation1.up * 15, ForceMode.Impulse);
             shot01WasShot_lol = true;
         }
 
         if (shotTimer < 2.49 && shotTimer > 2f && !shot02WasShot_lol)
         {
-            BulletRef = Instantiate(Bullet, BulletLocation.position, BulletLocation.rotation);
-            BulletRef.GetComponent<Rigidbody>().AddForce(transform.up * 15, ForceMode.Impulse);
+            BulletRef = Instantiate(Bullet, BulletLocation2.position, BulletLocation2.rotation);
+            BulletRef.GetComponent<Rigidbody>().AddForce(BulletLocation2.up * 15, ForceMode.Impulse);
             shot02WasShot_lol = true;
         }
 
         if (shotTimer < 1.9 && shotTimer > 0.01f && !shot03WasShot_lol)
         {
-            BulletRef = Instantiate(Bullet, BulletLocation.position, BulletLocation.rotation);
-            BulletRef.GetComponent<Rigidbody>().AddForce(transform.up * 15, ForceMode.Impulse);
+            BulletRef = Instantiate(Bullet, BulletLocation3.position, BulletLocation3.rotation);
+            BulletRef.GetComponent<Rigidbody>().AddForce(BulletLocation3.up * 15, ForceMode.Impulse);
             shot03WasShot_lol = true;
         }
 

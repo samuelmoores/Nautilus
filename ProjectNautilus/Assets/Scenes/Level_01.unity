@@ -4200,6 +4200,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8030406168920054863, guid: e5c600ae989c78043984b59db38bc23c, type: 3}
   m_PrefabInstance: {fileID: 463146190}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &464814465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6636025400197478400, guid: aa2e0d4b033735446b2335f334754036, type: 3}
+  m_PrefabInstance: {fileID: 2662348799913933130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &482756237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19514,6 +19519,10 @@ PrefabInstance:
       propertyPath: shotOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5597468580706855945, guid: aa2e0d4b033735446b2335f334754036, type: 3}
+      propertyPath: BulletLocation2
+      value: 
+      objectReference: {fileID: 464814465}
     - target: {fileID: 8615635717727883940, guid: aa2e0d4b033735446b2335f334754036, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.38057
