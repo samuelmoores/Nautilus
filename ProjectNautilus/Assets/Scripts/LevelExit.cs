@@ -16,24 +16,34 @@ public class LevelExit : MonoBehaviour
         //coinsUI.GetComponent<CoinsUI>().numOfCoins;
     }
 
+    private void OnGUI()
+    {
+        if (beginTimer)
+        {
+            GUI.skin.box.fontSize = 20;
+            GUI.Box(new Rect(300, 200, 500, 50), "You collected " + coinsUI.GetComponent<CoinsUI>().numOfCoins + " coins out of a possible total of " + totalCoins + "!");
+            GUI.Box(new Rect(300, 300, 500, 50), "Going to the next level in " + $"{timer:0.00}" + " seconds...");
+        }
+    }
     void Update()
     {
         if (beginTimer)
         {
             timer -= Time.deltaTime;
-            GUI.Box(new Rect(20, 20, 150, 25), "You collected " + coinsUI.GetComponent<CoinsUI>().numOfCoins + " coins out of a possible total of " + totalCoins + "!");
-            GUI.Box(new Rect(20, 50, 150, 25), "Going to the next level in " + timer + "seconds...");
+
         }
 
-        if (timer < 0)
+        if (timer < 0f)
         {
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
+                Debug.Log("load 1");
                 SceneManager.LoadScene(1);
             }
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 SceneManager.LoadScene(0);
+                Debug.Log("load 0");
             }
         }
     }

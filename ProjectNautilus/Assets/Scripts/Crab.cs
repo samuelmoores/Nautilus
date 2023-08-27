@@ -16,7 +16,7 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
+        //Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
 
         if(Vector3.Distance(transform.position, Player.transform.position) < 7)
         {
