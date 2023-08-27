@@ -6,7 +6,9 @@ using UnityEngine;
 public class Submarine : MonoBehaviour
 {
     GameObject Player;
+    GameObject PlayerModel;
     PlayerController playerController;
+    SkinnedMeshRenderer playerMesh;
     public GameObject Torpedo;
     GameObject TorpedoRef;
     public float TorpedoSpeed;
@@ -17,7 +19,9 @@ public class Submarine : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("PF_ScubaSteve");
+        PlayerModel = GameObject.Find("ScubaSteve");
         playerController = Player.GetComponent<PlayerController>();
+        playerMesh = PlayerModel.GetComponent<SkinnedMeshRenderer>();
     }
 
     void Update()
@@ -32,6 +36,7 @@ public class Submarine : MonoBehaviour
         {
             Player.GetComponent<CapsuleCollider>().enabled = false;
             playerController.isDrivingSubmarine = true;
+            playerMesh.enabled = false;
 
             transform.position = Player.transform.position;
             transform.rotation = Quaternion.Euler(0, Player.transform.eulerAngles.y, 0);
