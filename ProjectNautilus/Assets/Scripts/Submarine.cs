@@ -16,6 +16,7 @@ public class Submarine : MonoBehaviour
     bool canIntereact;
     public float fireRate;
     float shotTimer;
+    AudioSource audio1;
   
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Submarine : MonoBehaviour
         PlayerModel = GameObject.Find("ScubaSteve");
         playerController = Player.GetComponent<PlayerController>();
         playerMesh = PlayerModel.GetComponent<SkinnedMeshRenderer>();
+        audio1 = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,6 +37,7 @@ public class Submarine : MonoBehaviour
             TorpedoRef = Instantiate(Torpedo, TorpedoLoc.position, TorpedoLoc.rotation);
             TorpedoRef.GetComponent<Rigidbody>().AddForce(transform.forward * TorpedoSpeed, ForceMode.Impulse);
             shotTimer = fireRate;
+            audio1.Play();
         }
 
         if(canIntereact && Player.GetComponent<PlayerController>().isInteracting)

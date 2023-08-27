@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     float respawnTimer = 5f;
     float currentRespawnTimer;
     Transform CurrentCheckpoint;
+    public AudioClip[] damageSounds;
+    public AudioSource audsrc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
         health = 1.0f;
         Physics.gravity = new Vector3(0, -2, 0);
         currentRespawnTimer = respawnTimer;
+        audsrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -133,6 +137,11 @@ public class PlayerController : MonoBehaviour
         {
             CurrentCheckpoint = other.transform;
         }
+        if (other.CompareTag("Enemy"))
+        {
+            audsrc.clip = damageSounds[Random.Range(0,damageSounds.Length)];
+            audsrc.Play();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -157,7 +166,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && !isDrivingSubmarine)
         {
             takingDamage = true;
-
+            audsrc.clip = damageSounds[Random.Range(0, damageSounds.Length)];
+            audsrc.Play();
         }
     }
 
