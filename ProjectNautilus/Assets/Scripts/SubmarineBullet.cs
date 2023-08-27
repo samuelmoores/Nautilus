@@ -5,6 +5,12 @@ using UnityEngine;
 public class SubmarineBullet : MonoBehaviour
 {
     public float shotTimer = 4f;
+    PlayerController Player;
+
+    void Start()
+    {
+        Player = GameObject.Find("PF_ScubaSteve").GetComponent<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,6 +28,7 @@ public class SubmarineBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Player.takingDamage = false;
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

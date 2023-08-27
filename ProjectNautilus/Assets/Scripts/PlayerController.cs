@@ -133,8 +133,11 @@ public class PlayerController : MonoBehaviour
         {
             CurrentCheckpoint = other.transform;
         }
+    }
 
-        if(other.CompareTag("Enemy"))
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
         {
             takingDamage = true;
         }
