@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    PlayerController playerController;
+    //PlayerController playerController;
     public GameObject[] patrolRoute;
     int patrolRouteIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("PF_ScubaSteve").GetComponent<PlayerController>();
+        //playerController = GameObject.Find("PF_ScubaSteve").GetComponent<PlayerController>();
 
     }
 
@@ -41,17 +41,17 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Player") && !playerController.isDead)
-        {
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.CompareTag("Player") && !playerController.isDead)
+    //    {
+    //    }
+    //}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if(collision.gameObject.CompareTag("Player"))
+    //    {
+    //    }
+    //}
 }
