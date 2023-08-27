@@ -10,7 +10,7 @@ public class SeaAnome : MonoBehaviour
     bool shot03WasShot_lol = false;
     public int shotOffset;
 
-    float shotInterval = 2.0f;
+    //float shotInterval = 2.0f;
     public GameObject Bullet;
     GameObject BulletRef;
 
