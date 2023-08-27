@@ -17353,6 +17353,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2542819531543122153, guid: 43310256f43f7ae468f3a32867c25212, type: 3}
   m_PrefabInstance: {fileID: 1816721603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1818860109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9979733
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06363412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905046398371132036, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429945194370312254, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_Name
+      value: PF_OxygenTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859753749614315641, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e17340e6b4e9dff47bbde67f1a837c51, type: 3}
 --- !u!1001 &1837383941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19595,3 +19656,4 @@ SceneRoots:
   - {fileID: 1717377318}
   - {fileID: 421543045}
   - {fileID: 341759901}
+  - {fileID: 1818860109}
