@@ -14,6 +14,8 @@ public class Submarine : MonoBehaviour
     public float TorpedoSpeed;
     public Transform TorpedoLoc;
     bool canIntereact;
+    public float fireRate;
+    float shotTimer;
   
     // Start is called before the first frame update
     void Start()
@@ -26,10 +28,13 @@ public class Submarine : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && playerController.isDrivingSubmarine)
+        shotTimer -= Time.deltaTime;
+
+        if(Input.GetButtonDown("Fire1") && playerController.isDrivingSubmarine && shotTimer < 0)
         {
             TorpedoRef = Instantiate(Torpedo, TorpedoLoc.position, TorpedoLoc.rotation);
             TorpedoRef.GetComponent<Rigidbody>().AddForce(transform.forward * TorpedoSpeed, ForceMode.Impulse);
+            shotTimer = fireRate;
         }
 
         if(canIntereact && Player.GetComponent<PlayerController>().isInteracting)

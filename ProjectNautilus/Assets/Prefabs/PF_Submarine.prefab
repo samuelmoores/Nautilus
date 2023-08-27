@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 7254391184637191987}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1.868, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.65, z: 2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,8 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Torpedo: {fileID: 5431516028900188610, guid: ea58fa9ff040cde49a0d50cec9a98257, type: 3}
-  TorpedoSpeed: 15
+  TorpedoSpeed: 10
   TorpedoLoc: {fileID: 4411334997605437852}
+  fireRate: 1
 --- !u!65 &3402642832143115979
 BoxCollider:
   m_ObjectHideFlags: 0
