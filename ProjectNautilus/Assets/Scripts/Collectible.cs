@@ -7,17 +7,13 @@ public class Collectible : MonoBehaviour
     GameManager gameManager;
     GameObject coinsUI;
 
-    [HideInInspector] public bool canCollect = false;
+     public bool canCollect = false;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         coinsUI = GameObject.Find("CoinsHUD");
-    }
-
-    private void Update()
-    {
     }
 
     private void OnTriggerEnter(Collider other)
